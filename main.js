@@ -12,6 +12,7 @@
 //
 
 // -- отримує текст з параграфа з id "content"
+
 // let contents = document.getElementById('content')
 // console.log(contents)
 // contents.innerText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, voluptatum.'
@@ -39,13 +40,13 @@
 // for (const fcrule of fc_rules) {
 //     console.log(fcrule)
 //     fcrule.style.color = 'red'
-//     fcrule.onclick = function (){
+//     fcrule.onclick = function (ev){
 //         console.log(`clik on fc_rules`)
-//         console.log(`${fc_rules.text}`)
+//         console.log(ev.target.innerText)
 //
 //     }
 // }
-//
+
 
 
 // Взяти файл template_2.html та працювати в ньому
@@ -91,31 +92,33 @@ console.log(linklist);
 
 
 // f) отримує всі елементи 'a' та додає їм клас anchor
+ let aa
+
 // g) отримує всі елементи 'a' та у випадку, якщо текстовий контен елементу дорівнює link3, змінює йому розмір тексту на 40 пікселів
 // h) отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
 
-let aa = document.getElementsByTagName('a')
-console.log(aa)
-for (const a of aa) {
-    a.classList.add(`anchor`);
-    if (a === aa[2]){
-        a.style.width = '40px'
+let link = document.querySelectorAll('.linkList a');
+for (const linkElement of link) {
+    linkElement.classList.add('anchor')
+    if (linkElement.innerText === 'link3') {
+        linkElement.style.fontSize = '40px';
     }
-    a.classList.add(`element_${a}`)
 }
+
+
 
 // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
 // j) отримує всі елементи 'sub-header' та змінює колір тексту у видаку якщо текст елемнту = content 2 segment . Колір отримати з prompt()
 
 
-let sub_heards = document.getElementsByClassName('sub-header')
-for ( const sub_heard of sub_heards){
-    sub_heard.style.background = prompt('pls enter color')
-    if (sub_heard === sub_heards[1]){
-        sub_heard.innerHTML = prompt('enter text')
+let sub_headers = document.querySelectorAll('.sub-header')
+for (const sub_header of sub_headers){
+    sub_header.style.background = prompt('pls enter backgraund')
+    if(sub_header.innerHTML === 'content 2 segment'){
+        sub_header.style.color = prompt('pls enter color')
     }
-
 }
+
 
 // k) отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
 
@@ -137,8 +140,18 @@ let text2s = document.getElementsByClassName('text2')
      text2.innerHTML = 'july-2021'
  }
 
-
-
+//
+//  let loginform = document.forms.loginform
+//
+// const email = loginform.email;
+// const password = loginform.password
+// const sbuton = loginform.submit
+//
+// sbuton.onclick = function (ev) {
+//     console.log(email.value, 'email')
+//     console.log(password.value, 'password')
+// //     ev.preventDefault()
+// }
 
 
 
