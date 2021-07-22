@@ -140,19 +140,5 @@ let text2s = document.getElementsByClassName('text2')
      text2.innerHTML = 'july-2021'
  }
 
-//
-//  let loginform = document.forms.loginform
-//
-// const email = loginform.email;
-// const password = loginform.password
-// const sbuton = loginform.submit
-//
-// sbuton.onclick = function (ev) {
-//     console.log(email.value, 'email')
-//     console.log(password.value, 'password')
-// //     ev.preventDefault()
-// }
-
-
 
 
